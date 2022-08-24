@@ -16,22 +16,13 @@ public class Pessoa {
         return idade;
     }
 
-    public void setIdade(int idade) throws IdadeException {
-        if ((idade <= 0) || (idade > 120))
-            throw new IdadeException("Idade informada deve estar entre 0 e 120 anos");
+    public void setIdade(int idade) throws IdadeException{
+        if ((idade <= 0) || (idade > 120)) {
+            throw new IdadeException();
+        }
         this.idade = idade;
     }
-
-    public void setIdade(String idadeStr) throws IdadeException {
-        this.setIdade(Integer.parseInt(idadeStr));
-    }
-
-
-    @Override
-    public String toString() {
-        return "Pessoa{" +
-                "nome='" + nome + '\'' +
-                ", idade=" + idade +
-                '}';
+    public void setIdade(String stringIdade) throws IdadeException, NumberFormatException{
+        setIdade(Integer.parseInt(stringIdade));
     }
 }

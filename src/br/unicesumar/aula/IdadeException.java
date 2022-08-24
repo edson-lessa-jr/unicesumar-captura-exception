@@ -6,6 +6,6 @@ public class IdadeException extends Exception{
     }
 
     public IdadeException() {
-        super("Idade inválida!");
+        super("Idade não é válida");
     }
 }
